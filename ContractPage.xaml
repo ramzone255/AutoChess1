@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContractWork.ContractPage"
+             Title="ContractPage">
+    <StackLayout>
+        <Picker Title="Название книги" 
+                ItemDisplayBinding="{Binding Title}"
+                SelectedIndexChanged="typePicker_SelectedIndexChanged"
+                x:Name="typePicker"/>
+        <Entry Text="{Binding Id_Type}" IsVisible="True" x:Name="typeId"/>
+        <Picker Title="Количество книг" 
+                ItemDisplayBinding="{Binding Status}"
+                SelectedIndexChanged="statusPicker_SelectedIndexChanged"
+                x:Name="statusPicker"/>
+        <Entry Text="{Binding Id_Status}" IsVisible="True" x:Name="statusId"/>
+        <Label Text="Год издания"/>
+        <Entry Text="{Binding Name}" />
+        <Label Text="Издательство"/>
+        <Entry Text="{Binding Date_Of_Conclusion}"/>
+        <Label Text="Дата окончания"/>
+        <Entry Text="{Binding Ending_Date}"/>
+        <Label Text="Сумма"/>
+        <Entry Text="{Binding Summ}"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveContract" />
+            <Button Text="Удалить" Clicked="DeleteContract" />
+            <Button Text="Отмена" Clicked="Cancel" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
